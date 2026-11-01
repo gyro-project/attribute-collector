@@ -1,0 +1,51 @@
+{
+  "name": "gyro/attribute-collector",
+  "type": "composer-plugin",
+  "description": "Collects PHP attribute targets from the root package and from its Composer dependencies.",
+  "keywords": [
+    "gyro",
+    "attributes",
+    "composer-plugin",
+    "plugin-system",
+    "discovery"
+  ],
+  "homepage": "https://www.gyro-project.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Benjamin Eberlei",
+      "email": "kontakt@beberlei.de"
+    }
+  ],
+  "version": "1.0.x-dev",
+  "require": {
+    "php": ">=8.5",
+    "composer-plugin-api": "^2.3",
+    "olvlvl/composer-attribute-collector": "~2.1.0"
+  },
+  "require-dev": {
+    "composer/composer": "^2.3",
+    "gyro/coding-standard": "^1.2",
+    "phpunit/phpunit": "^12"
+  },
+  "autoload": {
+    "psr-4": {
+      "Gyro\\Component\\AttributeCollector\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Gyro\\Component\\AttributeCollector\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "olvlvl/composer-attribute-collector": false
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "class": "Gyro\\Component\\AttributeCollector\\Plugin"
+  }
+}
